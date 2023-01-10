@@ -1,0 +1,293 @@
+/* 
+  Reset CSS 
+  Youtube 👉 https://www.youtube.com/watch?v=Foieq2jTajE 
+  Github  👉 https://github.com/eduardofierropro/Reset-CSS
+*/
+
+:root {
+  --negro: #393939;
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  display: block;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Código */
+
+.header{
+  width: 100%;
+  background-color:#FAFAFA;;
+  color: #18181B;
+  padding:1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  align-items: center;
+}
+.header .h1{
+
+}
+.header .a{}
+
+.header .button{
+  display: none;
+  cursor: pointer;
+}
+.header .svg{
+  width: 2em;
+  height: 2em;
+  fill: #18181B;
+}
+.header .nav{
+  width: 80%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .ul{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:flex-end;
+  align-items: center;
+}
+.header .li{
+  margin: 0 0.5em;
+}
+.btn{
+  display: flex;
+  flex-flow: row nowrap;
+
+  .but{
+    background-color: #18181B;
+    padding:.7em;
+    border-radius: 10px;
+    color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .-white{
+    background-color: #ececec;
+    color:#18181B;
+  }
+}
+
+.main{
+  
+  .container{
+    max-width: 32.6%;
+    margin: 3em auto;
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+    gap: 1.8em;
+    h1{
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 800;
+      /* font-size: 52px;*/
+      font-size: 3em;
+      line-height: 62px;
+      text-align: center;
+      color: #18181B;
+    }
+    p{
+      text-align: center;
+    }
+    .btn{
+      display: flex;
+      gap: 1em;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content:center;
+      svg {
+        width: 2em;
+      }
+      .-white{
+        border: 2px solid #A1A1AA;
+        background-color: white;
+      }
+    }
+    figure{
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:800px){
+  .header .button{
+  
+    display: block;
+  }
+  .header .nav{/*quando o botão não estiver ativo */
+    width: 100%;
+   /* display: none;*/
+   overflow: hidden;
+   pointer-events: none;/*para não ter efeito no mouse*/
+   height: 0vh;
+   transition: all .5s ease-in-out;
+
+
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:center;
+   align-items: center;
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    pointer-events: auto;
+  }
+  .header .ul{
+    flex-direction: column;
+  }
+  .header .li{
+    margin: 1em 0;
+  }
+
+
+
+  .main{
+  
+    .container{
+      max-width: 80%;
+      padding: 0;
+      h1{
+        font-size: 1em;
+        line-height: 1em;
+      }
+      .btn{
+        display: flex;
+        gap: 1em;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content:center;
+        svg {
+          width: 2em;
+        }
+        .-white{
+          border: 2px solid #A1A1AA;
+          background-color: white;
+        }
+      }
+      figure{
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
